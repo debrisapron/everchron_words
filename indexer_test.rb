@@ -13,7 +13,12 @@ describe Indexer do
 
     it "returns the correct results for the given dictionary file" do
       result = Indexer.index(File.open('./dictionary.txt'))
-      result.keys[0..9].must_equal %w(10th AAAS Aarh arhu rhus Aaro Abab bacu balo bbas)
+      result.keys[0..9].must_equal(
+        %w(10th AAAS Aarh arhu rhus Aaro Abab bacu balo bbas)
+      )
+      result.values[0..9].must_equal(
+        %w(10th AAAS Aarhus Aarhus Aarhus Aaron Ababa abacus abalone abbas)
+      )
     end
   end
 
